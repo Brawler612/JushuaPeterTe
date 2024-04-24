@@ -16,5 +16,21 @@ public class CreateTable {
             } catch(SQLException e) {
             e.printStackTrace();
         }
+
+        //NEW
+        try (Connection conn = MySQLConnection.createTables();
+             Statement statement = conn.createStatement()) {
+            String query = "CREATE TABLE IF NOT EXISTS user_activities ("
+                    + "activity_id INT AUTO_INCREMENT PRIMARY KEY,"
+                    + "user_id INT,"
+                    + "activity_name VARCHAR(255),"
+                    + "activity_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,"
+                    + "FOREIGN KEY (user_id) REFERENCES users(id)"
+                    + ")";
+            statement.executeUpdate(query);
+            System.out.println("user_activities table created successfully.");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

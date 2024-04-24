@@ -19,5 +19,22 @@ public class UpdateData {
         } catch(SQLException e) {
             e.printStackTrace();
         }
+
+        //NEW
+        try (Connection conn = MySQLConnection.createTables();
+             PreparedStatement statement = conn.prepareStatement(
+                     "UPDATE user_activities SET activity_name=? WHERE activity_id=?"
+             )) {
+            String updatedActivityName = null;
+            int activityId = 0;
+
+            statement.setString(1, updatedActivityName);
+            statement.setInt(2, activityId);
+
+            int rows = statement.executeUpdate();
+            System.out.println("Rows updated in user_activities: " + rows);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

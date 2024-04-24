@@ -22,5 +22,25 @@ public class ReadData {
         } catch(SQLException e) {
             e.printStackTrace();
         }
+
+        //NEW
+        try (Connection conn = MySQLConnection.createTables();
+             Statement statement = conn.createStatement()) {
+            String query = "SELECT * FROM user_activities";
+            ResultSet res = statement.executeQuery(query);
+            while (res.next()) {
+                int activityId = res.getInt("activity_id");
+                int userId = res.getInt("user_id");
+                String activityName = res.getString("activity_name");
+                String activityDate = res.getString("activity_date");
+
+                System.out.println("Activity ID: " + activityId);
+                System.out.println("User ID: " + userId);
+                System.out.println("Activity Name: " + activityName);
+                System.out.println("Activity Date: " + activityDate);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -22,5 +22,19 @@ public class DeleteData {
         } catch(SQLException e) {
             e.printStackTrace();
         }
+
+        try (Connection conn = MySQLConnection.createTables();
+             PreparedStatement statement = conn.prepareStatement(
+                     "DELETE FROM user_activities WHERE activity_id=?"
+             )) {
+            int activityIdToDelete = 1;
+
+            statement.setInt(1, activityIdToDelete);
+
+            int rowsDeleted = statement.executeUpdate();
+            System.out.println("Rows deleted from user_activities: " + rowsDeleted);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
