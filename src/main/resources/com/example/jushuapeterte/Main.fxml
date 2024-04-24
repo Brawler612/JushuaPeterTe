@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="550.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <top>
+        <Pane prefHeight="42.0" prefWidth="780.0" style="-fx-background-color: E9E9E;" BorderPane.alignment="CENTER">
+            <children>
+                <Label layoutX="14.0" layoutY="13.0" text="Dashboard" />
+                <Label layoutX="744.0" layoutY="9.0">
+                    <graphic>
+                        <ImageView fitHeight="24.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true" />
+                    </graphic>
+                </Label>
+            </children></Pane>
+    </top>
+    <left>
+        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #AAB2BD;" BorderPane.alignment="CENTER">
+            <children>
+                <VBox layoutX="6.0" layoutY="202.0" prefHeight="200.0" prefWidth="200.0" />
+                <Button layoutY="50.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="200.0" style="-fx-background-color: #AAB2BD;" text="HOME">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Button>
+                <Button layoutY="88.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="200.0" style="-fx-background-color: #AAB2BD;" text="PAGE 01">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Button><Button layoutY="126.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="200.0" style="-fx-background-color: #AAB2BD;" text="PAGE 02">
+                <font>
+                    <Font size="16.0" />
+                </font>
+            </Button>
+                <Button layoutY="164.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="200.0" style="-fx-background-color: #AAB2BD;" text="PAGE 03">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Button>
+            </children></Pane>
+    </left>
+    <center>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <children>
+                <StackPane layoutY="27.0" prefHeight="150.0" prefWidth="560.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            </children></AnchorPane>
+    </center>
+</BorderPane>
